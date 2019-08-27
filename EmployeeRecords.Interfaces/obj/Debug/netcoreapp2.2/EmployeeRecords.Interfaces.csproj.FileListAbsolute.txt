@@ -1,9 +1,0 @@
-C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Interfaces\bin\Debug\netcoreapp2.2\EmployeeRecords.Interfaces.deps.json
-C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Interfaces\bin\Debug\netcoreapp2.2\EmployeeRecords.Interfaces.dll
-C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Interfaces\bin\Debug\netcoreapp2.2\EmployeeRecords.Interfaces.pdb
-C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Interfaces\obj\Debug\netcoreapp2.2\EmployeeRecords.Interfaces.csproj.CoreCompileInputs.cache
-C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Interfaces\obj\Debug\netcoreapp2.2\EmployeeRecords.Interfaces.AssemblyInfoInputs.cache
-C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Interfaces\obj\Debug\netcoreapp2.2\EmployeeRecords.Interfaces.AssemblyInfo.cs
-C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Interfaces\obj\Debug\netcoreapp2.2\EmployeeRecords.Interfaces.dll
-C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Interfaces\obj\Debug\netcoreapp2.2\EmployeeRecords.Interfaces.pdb
-C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Interfaces\obj\Debug\netcoreapp2.2\EmployeeRecords.Interfaces.csprojAssemblyReference.cache
