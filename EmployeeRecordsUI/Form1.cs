@@ -17,8 +17,7 @@ namespace EmployeeRecordsUI
 
         private void GridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
-            var data = (Employee) e.Row;
-            UpdateEmployeeInformation((Employee)e.Row);
+            UpdateEmployeeInformation(e);
         }
 
         private void SimpleButton1_Click(object sender, EventArgs e)

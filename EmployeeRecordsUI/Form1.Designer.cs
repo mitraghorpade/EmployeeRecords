@@ -10,6 +10,8 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraPrinting.Native.WebClientUIControl;
 using Newtonsoft.Json;
 using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace EmployeeRecordsUI
 {
@@ -113,6 +115,7 @@ namespace EmployeeRecordsUI
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.GridView1_RowUpdated);
             this.gridView1.CellValueChanged += GridView1_CellValueChanged;
             this.gridView1.ValidateRow += GridView1_ValidateRow;
+            this.gridView1.RowClick += GridView1_RowClick;
             // 
             // colId
             // 
@@ -173,6 +176,15 @@ namespace EmployeeRecordsUI
 
         }
 
+        private void GridView1_RowClick(object sender, RowClickEventArgs e)
+        {
+            var employee = new Employee();
+
+            employee = (Employee)gridControl1.MainView.GetRow(e.RowHandle);
+            MessageBox.Show("FirstName: " + employee.FirstName + Environment.NewLine + "LastName: " + employee.LastName + 
+                             Environment.NewLine +  "DateTimeCreated: " + employee.DateTimeCreated);
+        }
+
         private void GridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             
@@ -207,14 +219,15 @@ namespace EmployeeRecordsUI
             }
         }
 
-        public void UpdateEmployeeInformation(Employee e)
+        public void UpdateEmployeeInformation(RowObjectEventArgs e)
         {
             try
             {
+                var employeeRecord = (Employee) e.Row;
                 HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Post, "http://localhost:50340/api/employee");
                 message.Headers.Add("Accept", "application/json");
                 message.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                message.Content = new StringContent(JsonConvert.SerializeObject(e), Encoding.UTF8, "application/json");
+                message.Content = new StringContent(JsonConvert.SerializeObject(employeeRecord), Encoding.UTF8, "application/json");
                 var response  = client.SendAsync(message).Result;
                 GetEmployeeInformation();
             }
