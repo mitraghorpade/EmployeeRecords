@@ -1,0 +1,321 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecordsWebAPI\\EmployeeRecordsWebAPI.csproj": {}
+  },
+  "projects": {
+    "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.BusinessLogic\\EmployeeRecords.BusinessLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.BusinessLogic\\EmployeeRecords.BusinessLogic.csproj",
+        "projectName": "EmployeeRecords.BusinessLogic",
+        "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.BusinessLogic\\EmployeeRecords.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\mghorpade\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.BusinessLogic\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mghorpade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\mghorpade\\Desktop\\LocalRepository": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Interfaces\\EmployeeRecords.Interfaces.csproj": {
+                "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Interfaces\\EmployeeRecords.Interfaces.csproj"
+              },
+              "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Models\\EmployeeRecords.Models.csproj": {
+                "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Models\\EmployeeRecords.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.DataAccess\\EmployeeRecords.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.DataAccess\\EmployeeRecords.DataAccess.csproj",
+        "projectName": "EmployeeRecords.DataAccess",
+        "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.DataAccess\\EmployeeRecords.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\mghorpade\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mghorpade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\mghorpade\\Desktop\\LocalRepository": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Interfaces\\EmployeeRecords.Interfaces.csproj": {
+                "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Interfaces\\EmployeeRecords.Interfaces.csproj"
+              },
+              "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Models\\EmployeeRecords.Models.csproj": {
+                "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Models\\EmployeeRecords.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Interfaces\\EmployeeRecords.Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Interfaces\\EmployeeRecords.Interfaces.csproj",
+        "projectName": "EmployeeRecords.Interfaces",
+        "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Interfaces\\EmployeeRecords.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\mghorpade\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Interfaces\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mghorpade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\mghorpade\\Desktop\\LocalRepository": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Models\\EmployeeRecords.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Models\\EmployeeRecords.Models.csproj",
+        "projectName": "EmployeeRecords.Models",
+        "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Models\\EmployeeRecords.Models.csproj",
+        "packagesPath": "C:\\Users\\mghorpade\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mghorpade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\mghorpade\\Desktop\\LocalRepository": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecordsWebAPI\\EmployeeRecordsWebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecordsWebAPI\\EmployeeRecordsWebAPI.csproj",
+        "projectName": "EmployeeRecordsWebAPI",
+        "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecordsWebAPI\\EmployeeRecordsWebAPI.csproj",
+        "packagesPath": "C:\\Users\\mghorpade\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecordsWebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mghorpade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\mghorpade\\Desktop\\LocalRepository": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.BusinessLogic\\EmployeeRecords.BusinessLogic.csproj": {
+                "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.BusinessLogic\\EmployeeRecords.BusinessLogic.csproj"
+              },
+              "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.DataAccess\\EmployeeRecords.DataAccess.csproj": {
+                "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.DataAccess\\EmployeeRecords.DataAccess.csproj"
+              },
+              "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Interfaces\\EmployeeRecords.Interfaces.csproj": {
+                "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Interfaces\\EmployeeRecords.Interfaces.csproj"
+              },
+              "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Models\\EmployeeRecords.Models.csproj": {
+                "projectPath": "C:\\Projects\\EmployeeRecords\\EmployeeRecords\\EmployeeRecords.Models\\EmployeeRecords.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

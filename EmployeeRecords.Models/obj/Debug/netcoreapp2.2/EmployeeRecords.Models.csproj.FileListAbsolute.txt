@@ -1,0 +1,9 @@
+C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Models\bin\Debug\netcoreapp2.2\EmployeeRecords.Models.deps.json
+C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Models\bin\Debug\netcoreapp2.2\EmployeeRecords.Models.dll
+C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Models\bin\Debug\netcoreapp2.2\EmployeeRecords.Models.pdb
+C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Models\obj\Debug\netcoreapp2.2\EmployeeRecords.Models.csproj.CoreCompileInputs.cache
+C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Models\obj\Debug\netcoreapp2.2\EmployeeRecords.Models.AssemblyInfoInputs.cache
+C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Models\obj\Debug\netcoreapp2.2\EmployeeRecords.Models.AssemblyInfo.cs
+C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Models\obj\Debug\netcoreapp2.2\EmployeeRecords.Models.dll
+C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Models\obj\Debug\netcoreapp2.2\EmployeeRecords.Models.pdb
+C:\Projects\EmployeeRecords\EmployeeRecords\EmployeeRecords.Models\obj\Debug\netcoreapp2.2\EmployeeRecords.Models.csprojAssemblyReference.cache
