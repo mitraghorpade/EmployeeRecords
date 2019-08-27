@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -8,6 +9,7 @@ using DevExpress.XtraGrid.Views.BandedGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraPrinting.Native.WebClientUIControl;
 using Newtonsoft.Json;
+using System.ComponentModel;
 
 namespace EmployeeRecordsUI
 {
@@ -111,7 +113,6 @@ namespace EmployeeRecordsUI
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.GridView1_RowUpdated);
             this.gridView1.CellValueChanged += GridView1_CellValueChanged;
             this.gridView1.ValidateRow += GridView1_ValidateRow;
-            
             // 
             // colId
             // 
@@ -172,46 +173,36 @@ namespace EmployeeRecordsUI
 
         }
 
-        //private void GridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
-        //{
-        //    var view = sender as GridView;
-        //    var firstNameCol = view.Columns["FirstName"];
-        //    var lastNameCol = view.Columns["LastName"];
-        //    //Validity criterion 
-        //    if (string.IsNullOrEmpty(firstNameCol.ToString()) || string.IsNullOrEmpty(lastNameCol.ToString()))
-        //    {
-        //        //Set errors with specific descriptions for the columns 
-        //        view.SetColumnError(firstNameCol, "The value can not be null!");
-        //        view.SetColumnError(lastNameCol, "The value can not be null!");
-        //    }
-        //}
+        private void GridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            
+        }
 
         private void GridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             var view = sender as GridView;
-            var firstNameCol = view.Columns["FirstName"];
-            var lastNameCol = view.Columns["LastName"];
+            var selectedColumn = view.Columns[e.Column.FieldName];
 
             //Validity criterion 
-            if (string.IsNullOrEmpty(view.GetRowCellValue(e.RowHandle, firstNameCol).ToString()))
+            if (string.IsNullOrEmpty(view.GetRowCellValue(e.RowHandle, selectedColumn).ToString()))
             {
                 //Set errors with specific descriptions for the columns 
-                view.SetColumnError(firstNameCol, "The value can not be null!");
+                view.SetColumnError(selectedColumn, "The value can not be null!");
             }
-            if(string.IsNullOrEmpty(view.GetRowCellValue(e.RowHandle, lastNameCol).ToString()))
+            else
             {
-                view.SetColumnError(lastNameCol, "The value can not be null!");
+                view.ClearColumnErrors();
             }
         }
 
         public void GetEmployeeInformation()
         {
-            var allEmployess = new List<Employee>();
+            var allEmployess = new BindingList<Employee>();
             HttpResponseMessage response = client.GetAsync("http://localhost:50340/api/employee").Result;
             if (response.IsSuccessStatusCode)
             {
                 var response1 = response.Content.ReadAsStringAsync().Result;
-                var listOfEmployees = JsonConvert.DeserializeObject<IList<Employee>>(response1);
+                var listOfEmployees = JsonConvert.DeserializeObject<BindingList<Employee>>(response1);
                 this.gridControl1.DataSource = listOfEmployees;
             }
         }
