@@ -11,6 +11,8 @@ using DevExpress.XtraPrinting.Native.WebClientUIControl;
 using Newtonsoft.Json;
 using System.ComponentModel;
 using System.Windows.Forms;
+using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Base;
 
 namespace EmployeeRecordsUI
@@ -89,7 +91,7 @@ namespace EmployeeRecordsUI
             this.gridControl1.Location = new System.Drawing.Point(32, 22);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(400, 200);
+            this.gridControl1.Size = new System.Drawing.Size(756, 358);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -113,9 +115,9 @@ namespace EmployeeRecordsUI
             this.gridView1.OptionsNavigation.AutoFocusNewRow = true;
             this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.GridView1_RowUpdated);
+            this.gridView1.RowClick += GridView1_RowClick;
             this.gridView1.CellValueChanged += GridView1_CellValueChanged;
             this.gridView1.ValidateRow += GridView1_ValidateRow;
-            this.gridView1.RowClick += GridView1_RowClick;
             // 
             // colId
             // 
@@ -147,7 +149,7 @@ namespace EmployeeRecordsUI
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(32, 250);
+            this.simpleButton1.Location = new System.Drawing.Point(32, 415);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(153, 23);
             this.simpleButton1.TabIndex = 1;
@@ -187,7 +189,14 @@ namespace EmployeeRecordsUI
 
         private void GridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
-            
+            var employee = new Employee();
+
+            employee = (Employee)gridControl1.MainView.GetRow(e.RowHandle);
+
+            if (string.IsNullOrEmpty(employee.FirstName) || string.IsNullOrEmpty(employee.LastName))
+            {
+                MessageBox.Show("FirstName/LastName can not be null!");
+            }
         }
 
         private void GridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -223,12 +232,16 @@ namespace EmployeeRecordsUI
         {
             try
             {
+                
                 var employeeRecord = (Employee) e.Row;
-                HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Post, "http://localhost:50340/api/employee");
-                message.Headers.Add("Accept", "application/json");
-                message.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                message.Content = new StringContent(JsonConvert.SerializeObject(employeeRecord), Encoding.UTF8, "application/json");
-                var response  = client.SendAsync(message).Result;
+                if (!string.IsNullOrEmpty(employeeRecord.FirstName) && !string.IsNullOrEmpty(employeeRecord.LastName))
+                {
+                    HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Post, "http://localhost:50340/api/employee");
+                    message.Headers.Add("Accept", "application/json");
+                    message.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    message.Content = new StringContent(JsonConvert.SerializeObject(employeeRecord), Encoding.UTF8, "application/json");
+                    var response = client.SendAsync(message).Result;
+                }
                 GetEmployeeInformation();
             }
             catch (Exception exception)
@@ -237,6 +250,7 @@ namespace EmployeeRecordsUI
                 throw;
             }
         }
+        
         #endregion
         private EmployeeRecordsDataSet employeeRecordsDataSet;
         private System.Windows.Forms.BindingSource employeesBindingSource;
