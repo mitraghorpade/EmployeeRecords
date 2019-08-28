@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -31,7 +32,7 @@ namespace EmployeeRecordsUI.Services
             }
         }
 
-        public static void UpdateEmployeeInformation(RowObjectEventArgs e)
+        public static void CreateEmployee(RowObjectEventArgs e)
         {
             try
             {
@@ -40,6 +41,32 @@ namespace EmployeeRecordsUI.Services
                 if (!string.IsNullOrEmpty(employeeRecord.FirstName) && !string.IsNullOrEmpty(employeeRecord.LastName))
                 {
                     var message = CreateMessage(employeeRecord, HttpMethod.Post);
+                    var response = Client.SendAsync(message).Result;
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        Console.WriteLine("Something went wrong with processing data!");
+                    }
+                }
+                GetEmployeeInformation();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
+        }
+
+        public static void UpdateEmployeeInformation(RowObjectEventArgs e)
+        {
+            try
+            {
+
+                var employeeRecord = (Employee)e.Row;
+                if (!string.IsNullOrEmpty(employeeRecord.FirstName) && !string.IsNullOrEmpty(employeeRecord.LastName))
+                {
+                    var newUrl = "http://localhost:50340/api/employee/" + employeeRecord.Id;
+                    var message = CreateMessage(employeeRecord, HttpMethod.Put);
+                    message.RequestUri = new Uri(newUrl);
                     var response = Client.SendAsync(message).Result;
                     if (!response.IsSuccessStatusCode)
                     {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using DevExpress.XtraGrid;
 using EmployeeRecordsUI.Services;
 
 namespace EmployeeRecordsUI
@@ -20,7 +21,16 @@ namespace EmployeeRecordsUI
 
         private void GridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
-            EmployeeInformationService.UpdateEmployeeInformation(e);
+            var visibleIndex = this.gridView1.GetVisibleIndex(e.RowHandle);
+            var dataControllerRowIndex = this.gridView1.DataController.GetControllerRowHandle(visibleIndex);
+            if (gridView1.DataController.GetListSourceRowIndex(dataControllerRowIndex) == GridControl.InvalidRowHandle)
+            {
+                EmployeeInformationService.CreateEmployee(e);
+            }
+            else
+            {
+                EmployeeInformationService.UpdateEmployeeInformation(e);
+            }
             gridControl1.DataSource = EmployeeInformationService.GetEmployeeInformation();
         }
 
