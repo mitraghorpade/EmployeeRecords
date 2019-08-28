@@ -21,6 +21,18 @@ namespace EmployeeRecords.BusinessLogic.Services
             _employeeUnitOfWork.Save();
         }
 
+        public void Remove(Employee employee)
+        {
+            _employeeRepository.Remove(employee);
+            _employeeUnitOfWork.Save();
+        }
+
+        public void Update(Employee employee)
+        {
+            _employeeRepository.Update(employee);
+            _employeeUnitOfWork.Save();
+        }
+
         public IEnumerable<Employee> GetAll()
         {
             return _employeeRepository.GetAll();

@@ -10,6 +10,6 @@ namespace EmployeeRecordsUI
         
         public string LastName { get; set; }
 
-        public DateTime DateTimeCreated { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

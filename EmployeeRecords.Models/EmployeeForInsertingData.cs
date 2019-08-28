@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace EmployeeRecordsWebAPI.POCO
+namespace EmployeeRecords.Models
 {
     public class EmployeeForInsertingData
     {

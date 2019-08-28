@@ -17,19 +17,13 @@ namespace EmployeeRecords.DataAccess
 
         public void Add(T entity)
         {
-            if (DbSet.Contains(entity))
-            {
-                DbSet.Update(entity);
-            }
-            else
-            {
-                DbSet.Add(entity);
-            }
+             DbSet.Add(entity);
         }
 
-        public void Save()
+        public void Update(T entity)
         {
-            _context.SaveChanges();
+            //_context.Entry(entity).State = EntityState.Modified;
+            DbSet.Update(entity);
         }
 
         public void Remove(T entity)
