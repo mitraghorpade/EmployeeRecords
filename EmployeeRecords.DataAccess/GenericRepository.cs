@@ -22,7 +22,6 @@ namespace EmployeeRecords.DataAccess
 
         public void Update(T entity)
         {
-            //_context.Entry(entity).State = EntityState.Modified;
             DbSet.Update(entity);
         }
 

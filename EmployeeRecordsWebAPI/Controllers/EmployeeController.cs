@@ -4,7 +4,6 @@ using EmployeeRecords.BusinessLogic.Interfaces;
 using EmployeeRecords.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Internal;
 
 namespace EmployeeRecordsWebAPI.Controllers
 {
@@ -62,6 +61,7 @@ namespace EmployeeRecordsWebAPI.Controllers
                     DateCreated = DateTime.Now
                 };
                 _employeeRecordService.Add(employee);
+                _employeeRecordService.Save();
 
                 return Ok();
             }
@@ -79,6 +79,8 @@ namespace EmployeeRecordsWebAPI.Controllers
         /// <param name="employeeInfo"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Put(int id, [FromBody] EmployeeForInsertingData employeeInfo)
         {
             try
@@ -95,6 +97,7 @@ namespace EmployeeRecordsWebAPI.Controllers
                 existingEmployee.LastName = employeeInfo.LastName;
                 existingEmployee.DateCreated = DateTime.Now;
                 _employeeRecordService.Update(existingEmployee);
+                _employeeRecordService.Save();
 
                 return Ok();
             }
@@ -118,7 +121,7 @@ namespace EmployeeRecordsWebAPI.Controllers
                 }
 
                 _employeeRecordService.Remove(employeeInfo);
-
+                _employeeRecordService.Save();
                 return Ok();
             }
             catch (Exception e)

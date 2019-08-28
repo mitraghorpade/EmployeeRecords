@@ -1,6 +1,8 @@
 ﻿using System;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Windows.Forms;
+using DevExpress.Utils;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace EmployeeRecordsUI
 {
@@ -93,6 +95,7 @@ namespace EmployeeRecordsUI
             this.gridView1.RowDeleted += new DevExpress.Data.RowDeletedEventHandler(this.GridView1_RowDeleted);
             this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.GridView1_ValidateRow);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.GridView1_RowUpdated);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView_DoubleClick);
             // 
             // colId
             // 
@@ -164,6 +167,25 @@ namespace EmployeeRecordsUI
             {
                 MessageBox.Show("FirstName: " + employee.FirstName + Environment.NewLine + "LastName: " + employee.LastName +
                                 Environment.NewLine + "DateCreated: " + employee.DateCreated);
+            }
+        }
+
+        private void gridView_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+           
+            if (info.InRow || info.InRowCell)
+            {
+                var employee = new Employee();
+                employee = (Employee)gridControl1.MainView.GetRow(info.RowHandle);
+
+                if (employee != null)
+                {
+                    MessageBox.Show("FirstName: " + employee.FirstName + Environment.NewLine + "LastName: " + employee.LastName +
+                                    Environment.NewLine + "DateCreated: " + employee.DateCreated);
+                }
             }
         }
 

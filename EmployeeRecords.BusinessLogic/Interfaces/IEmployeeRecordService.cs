@@ -8,6 +8,7 @@ namespace EmployeeRecords.BusinessLogic.Interfaces
         void Add(Employee employee);
         void Update(Employee employee);
         void Remove(Employee employee);
+        void Save();
         IEnumerable<Employee> GetAll();
     }
 }
